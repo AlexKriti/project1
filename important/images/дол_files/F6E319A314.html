@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0452)https://r.mradx.net/h5/95/34FD9F8B/F6E319A314.html?data=AAD88wGJar-YMQWFQntzIDXIxC6rFPgIRLMIyvlQZt1eOnTdVte_8-ZaXsavup6ZjffOOArDvaJqyeTmc5xuxBNE8d7WM0doYbN8rI7xezjdMAMwPvZv6DBTFwXZH811guWNeKbIORUWExxHYC2HXycgwdYkAUWE4tzr2oqhopog_HkzTCiFKziDAAAAtn-pop8aJlgCZUNkzSZyXAk4KOGno87cC0jO3aeOhO4egFQZ_QSgjHapOSFYE2qhICwEcDYr5OybWCRRCI8iquc7XdPojCCfGAw4K0rrnoJrGpoWO-OGRGsbDc0DpfVSkXxXE1Kt27iyCvcOJc7kc0EooE8lxke_hEcu6zSovq4mft9VRQ83V5OZy-h00rh8&link1=341187561 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>MKT-21438_bl2720_KP_240x400</title>
+<!-- adding size -->
+<meta name="ad.size" content="width=240,height=400">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<script>var clickTag = "https://r.mail.ru/redir/AAD88wEnXb5eFzGEQUIn7SexbNQFaYsWlUnOjb2v_D61lpKdJNue60TmKFgEXB7bw46TQ1edU-nBbzvOBHDqCq2y0MhWi67vxajh2OhXUjsFi4RFGc59DDDSTWGQlTfMwhE-ZtIQGDlrpkGkVnXG0195EyyD39YUiYTJdGtSbNncl00xmIlE6l6PAAAAt7cSxyrj04c42YmL67Aa-QwMYCDJPYVBxR7v0y0hP5Pz3WDkDtmVCvdnE_viTBDtuWdmkPfZlT33oZ8aU-SCH3UxdsgEjh6i1FGbaqwbwgX1XAZSpmwIcMaTzugaqgmm-coZWq5GoDReJMZq5qcEiGoy0hWvN-6W4_o2-pfSpkYTPawJsARqrz2ZkC19TjKy";</script>
+<style> body { margin: 0; } </style>
+<!-- /adding size -->
+<!-- write your code here -->
+<script src="./createjs-2015.11.26.min.js.Без названия"></script>
+<script src="./MKT-21438_bl2720_KP_240x400.js.Без названия"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	images = images||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.MKT21438_bl2720_KP_240x400();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.enableMouseOver();	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;" marginwidth="0" marginheight="0">
+	<div id="animation_container" style="background-color:rgba(10, 8, 45, 1.00); width:240px; height:400px">
+		<canvas id="canvas" width="240" height="400" style="position: absolute; display: block; background-color:rgba(10, 8, 45, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:240px; height:400px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+
+</body></html>
